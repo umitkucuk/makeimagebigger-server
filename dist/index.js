@@ -17,7 +17,7 @@ var app = (0, _express["default"])();
 app.use(_bodyParser["default"].json());
 app.use((0, _cors["default"])()); // 192.168.1.101
 
-var server = app.listen(8080, '0.0.0.0', function () {
+var server = app.listen(8000, function () {
   console.log('Server is running on port', server.address().port);
 });
 var io = (0, _socket["default"])(server);

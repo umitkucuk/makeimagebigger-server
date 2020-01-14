@@ -13,7 +13,7 @@ app.use(cors())
 
 // 192.168.1.101
 
-const server = app.listen(4000, '0.0.0.0', () => {
+const server = app.listen(8080, '0.0.0.0', () => {
   console.log('Server is running on port', server.address().port)
 })
 

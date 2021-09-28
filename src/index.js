@@ -6,10 +6,13 @@ import multer from 'multer'
 import morgan from 'morgan'
 import fs from 'fs'
 import path from 'path'
+import http from 'http'
 
 let channels = []
 
 const app = express()
+const server = http.createServer(app)
+
 app.use(cors('*'))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
@@ -101,7 +104,7 @@ app.post('/delete-images', (req, res) => {
   return true
 })
 
-const server = app.listen(process.env.PORT || 8000, () => {
+server.listen(process.env.PORT || 8000, () => {
   console.log('Server is running on port', server.address().port)
 })
 
